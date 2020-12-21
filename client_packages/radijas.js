@@ -1,6 +1,5 @@
 /* Kodas kurtas by Tadeh#0069
    Visos teisės saugomos! Bet koks bandymas naudoti kodą norint pasipelnyti yra draudžiamas! @ 2020
-   Taip pat betkoks kodo viešinimas be mūsų sutikimo yra draudžiamas, net jei jį galite paprasčiausiai pamatyti savo kompiuteryje.
    Tačiau naudoti šį kodą mokslo tikslais, nėra draudžiama! */
 
 var radijas = mp.browsers.new('package://html/radijas.html');
