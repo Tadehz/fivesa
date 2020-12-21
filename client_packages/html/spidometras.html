@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style/spidometras.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function greitis(greitis, limitas, rpm, sanaudos, sanaudutitle, stotis, bukle, kuras, maxkuras, dujos) {
+            if(dujos == "-1")
+                dujos = "0";
+            document.getElementById("apsukos").style.width = `${parseInt(rpm) * 0.00068}vw`;
+            document.getElementById("greitis").textContent = `${greitis}`;
+            document.getElementById("litrai").textContent = `${kuras}L`;
+            document.getElementById("kurojuosta").style.height = `${100-((maxkuras-kuras)*100/maxkuras)}%`;
+            document.getElementById("dujujuosta").style.height = `${dujos}%`;
+            document.getElementById("procentai").textContent = `${dujos}%`;
+            if(parseInt(greitis) >= parseInt(limitas)) {
+                document.getElementById("greitis").style.color = "rgb(204, 17, 17)";
+            } else {
+                document.getElementById("greitis").style.color = "rgba(234, 234, 234)";
+            }
+            document.getElementById("title").textContent = `${sanaudutitle}`;
+            document.getElementById("sanaudos").textContent = `${sanaudos}`;
+            document.getElementById("stotis").textContent = `${stotis}km`;
+            if(parseInt(bukle) >= 80) {
+                document.getElementById("bukle").style.color = "rgb(14, 199, 17)";
+                document.getElementById("bukle").textContent = `${bukle}%`;
+            } else if(parseInt(bukle) >= 35) {
+                document.getElementById("bukle").style.color = "rgb(214, 159, 19)";
+                document.getElementById("bukle").textContent = `${bukle}%`;
+            } else {
+                document.getElementById("bukle").style.color = "rgb(214, 19, 19)";
+                document.getElementById("bukle").textContent = `${bukle}%`;
+            }
+            document.getElementById("spidometras").style.display = "block";
+        }
+
+        function nera() {
+            document.getElementById("spidometras").style.display = "none";
+        }
+    </script>
+</head>
+<body id="spidometras">
+    <div class="spidometras">
+        <div class="kurojuosta">
+            <div class="kurojuostosuzpildymas" id="kurojuosta">
+            </div>
+        </div>
+		<h2 class="litrai" id="litrai">72L</h2>
+		<img class="degalai" src="style/bakas.png">
+        <div class="dujujuosta">
+            <div class="dujujuostosuzpildymas" id="dujujuosta">
+            </div>
+        </div>
+		<h2 class="procentai" id="procentai">0%</h2>
+		<img class="dujos" src="style/dujos.png">
+
+        <div class="virsus">
+            <h1 class="greitis" id="greitis">0</h1>
+            <h1 class="kmh">km/h</h1>
+            <div class="linija"></div>
+            <h1 class="kurosanaudostitle" id="title">Kuro sąnaudos</h1>
+            <h1 class="kurosanaudos" id="sanaudos">0.00L/s</h1>
+        </div>
+        <div class="vidurys">
+            <h1 class="stotis">Rida: <span style="color: rgba(248, 167, 38);font-family:bold;" id="stotis">0</span></h1>
+        </div>
+        <div class="apacia">
+            <h1 class="bukle">Būklė: <span style="color: rgb(37, 214, 37);font-family:bold;" id="bukle">100%</span></h1>
+        </div>
+
+        <div class="apsukulinija">
+            <img class="apsukos" src="style/apsukos.png">
+            <div class="apsukuraudonalinija"></div>
+            <div class="apsukulinijosuzpildymas" id="apsukos"></div>
+
+            <div class="septynilinija">
+                <h1 class="septynilinijatekstas">6000</h1>
+            </div>
+            <div class="tryslinija">
+                <h1 class="tryslinijatekstas">2000</h1>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

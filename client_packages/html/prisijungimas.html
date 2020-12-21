@@ -1,0 +1,76 @@
+<!-- Labai paprastutis logino meniu, bet asmeniškai gražus -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style/prisijungimas.css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var jaupaspaustas = false;
+        function tipas(koks) {
+            if(koks === "loginas") {
+                document.getElementById("pavadinimas").textContent="Prisijungimas";
+                document.getElementById("mygtukas").textContent="PRISIJUNGTI";
+            } else {
+                document.getElementById("pavadinimas").textContent="Registracija";
+                document.getElementById("mygtukas").textContent="REGISTRUOTIS";
+            }
+        }
+
+        $(document).on('click', "#mygtukas", function() {
+            if(!jaupaspaustas) {
+                mp.trigger('slaptazodis', `${$("#slaptazodis").val()}`)
+            }
+        });
+
+        $(document).on('click', "#akis", function() {
+            if(document.getElementById("slaptazodis").type === "text") {
+                document.getElementById("akis").src = "style/akis.png"
+                document.getElementById("slaptazodis").type = "password"
+            } else if(document.getElementById("slaptazodis").type === "password") {
+                document.getElementById("akis").src = "style/uzdengtaakis.png"
+                document.getElementById("slaptazodis").type = "text"
+            }
+        });
+
+        function tinka() {
+            $("#box").addClass("slide")
+            jaupaspaustas = true;
+        }
+
+        function netinka() {
+            $("#klaida").addClass("klaida-on")
+            $("#box").addClass("netinka").one('webkitAnimationEnd mozAnimationEnd MSAnimationEnd oanimationend animationend', function(){
+                $(this).removeClass("netinka");
+            });
+        }
+
+        function focused() {
+            $("#linija").addClass("linija-focus")
+        }
+
+        function unfocused() {
+            $("#linija").removeClass("linija-focus")
+        }
+
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class='boxdelgrozio'></div>
+		<div class="boxinside">
+            <div class="icon"></div>
+            <h1 class="pavadinimas" id="pavadinimas">PRISIJUNGIMAS</h1>
+
+            <input onfocusin="focused()" onfocusout="unfocused()" class="slaptazodis" id="slaptazodis" placeholder="Iveskite slaptazodi" maxlength="30" type="password"><div class="linija" id="linija"></div></input>
+            <img src="style/warning.png" width="3.2%" class="klaida" id="klaida">
+            <img src="style/akis.png" class="akis" id="akis">
+            <h1 class="holderis">Slaptazodis</h1>
+            <h1 class="informacijuke">VISI SLAPTAZODZIAI YRA SIFRUOJAMI PRIES SAUGANT!</h1>
+            <div class="informacijukesbox"></div>
+
+			<button class="mygtukas" id="mygtukas">Prisijungti</button>
+        </div>
+        <div class='boxdelgroziodu'></div>
+    </div>
+</body>
+</html>

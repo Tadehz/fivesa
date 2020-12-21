@@ -1,0 +1,77 @@
+@font-face {
+    font-family: regular;
+    src: url(regular3.ttf)
+}
+
+body {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+
+    text-shadow: 0.052083333333333336vw 0.052083333333333336vw 0.052083333333333336vw #000000;
+}
+
+.pinigine {
+    position: fixed;
+    top: 0.8vw;
+    right: 1%;
+
+    width: 1.7vw;
+}
+
+.pinigai {
+    position: absolute;
+    top: 0.2vw;
+    right: 3.2%;
+    float: left;
+
+    font-family: regular;
+    font-size: 1.1vw;
+    font-weight: 100;
+    color: rgb(226, 226, 226);
+}
+
+
+.bankine {
+    position: fixed;
+    top: 2.6vw;
+    right: 1.15%;
+
+    width: 1.4vw;
+}
+
+.bankas {
+    position: absolute;
+    top: 2.2vw;
+    right: 2.9%;
+    float: left;
+
+    font-family: regular;
+    font-size: 0.88vw;
+    font-weight: 100;
+    color: rgb(226, 226, 226);
+    transform: scaleY(1.05)
+}
+
+
+.laikine {
+    position: fixed;
+    top: 4.5vw;
+    right: 1.25%;
+
+    width: 1.2vw;
+}
+
+.laikas {
+    position: absolute;
+    top: 3.8vw;
+    right: 2.9%;
+    float: left;
+
+    font-family: regular;
+    font-size: 0.9vw;
+    font-weight: 100;
+    color: white;
+}

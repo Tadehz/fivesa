@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style/mshop.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // Number with Commas function by Kerry [Simplified by someone else lol]
+        function skaiciausFormatas(skaicius) {
+            return skaicius.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        var dujulist = [
+            {dujos: "Ne", tikrakaina: 0, real: 0},
+            {dujos: "Taip", tikrakaina: 10000, real: 1}
+        ]
+        var dujos = 0
+
+        var spalvos = [
+            {spalva: "Juoda", tikrakaina: 0, real: 0},
+            {spalva: "Balta", tikrakaina: 1000, real: 111},
+            {spalva: "Raudona", tikrakaina: 1000, real: 27},
+            {spalva: "Žalia", tikrakaina: 1000, real: 53},
+            {spalva: "Mėlyna", tikrakaina: 1000, real: 64},
+            {spalva: "Žydra", tikrakaina: 2000, real: 70},
+            {spalva: "Geltona", tikrakaina: 2000, real: 88},
+            {spalva: "Oranžinė", tikrakaina: 2000, real: 38},
+            {spalva: "Rožinė", tikrakaina: 2000, real: 135},
+            {spalva: "Violetinė", tikrakaina: 1000, real: 145},
+            {spalva: "Auksinė", tikrakaina: 100000, real: 158}
+        ]
+        var spalva = 0
+
+        var varikliai = [
+            {variklis: "0 Lygis", tikrakaina: 0, real: -1},
+            {variklis: "1 Lygis", tikrakaina: 30000, real: 0},
+            {variklis: "2 Lygis", tikrakaina: 75000, real: 1},
+            {variklis: "3 Lygis", tikrakaina: 100000, real: 2},
+            {variklis: "4 Lygis", tikrakaina: 250000, real: 3}
+        ]
+        var variklis = 0
+
+        var spalvositem = `<span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Spalva (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">0€</span>)<br>`
+        var variklioitem = `<span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Variklis (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">0€</span>)<br>`
+        var dujuitem = `<span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Dujos (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">0€</span>)<br>`
+
+        var tikrakaina;
+        var varikliosuma = 0;
+        var spalvossuma = 0;
+		var dujusuma = 0;
+
+        $(document).mousedown(function(e) {
+            if (e.which === 3) {
+                mp.trigger('grp:laikomasdesinys')
+            }
+		});
+
+        $(document).ready(function() {
+            $("body").removeClass("preload");
+        });
+
+        function spalvanext() {
+            if(spalva < spalvos.length-1) {
+                spalva++;
+                spalvositem = `<span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Spalva (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">${skaiciausFormatas(spalvos[spalva].tikrakaina)}€</span>)<br>`
+                document.getElementById("spalva").textContent = spalvos[spalva].spalva;
+                document.getElementById("daiktai").innerHTML = spalvositem + variklioitem + dujuitem
+                document.getElementById("kainas").innerHTML = `${skaiciausFormatas(spalvos[spalva].tikrakaina)}€`
+
+                spalvossuma = spalvos[spalva].tikrakaina;
+                document.getElementById("suma").textContent = `${skaiciausFormatas(spalvossuma + varikliosuma + dujusuma + kaina)}€`
+
+                mp.trigger('grp:mpspalva', spalvos[spalva].real)
+            }
+        }
+
+        function spalvaback() {
+            if(spalva > 0) {
+                spalva--;
+                spalvositem = `<span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Spalva (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">${skaiciausFormatas(spalvos[spalva].tikrakaina)}€</span>)<br>`
+                document.getElementById("spalva").textContent = spalvos[spalva].spalva;
+                document.getElementById("daiktai").innerHTML = spalvositem + variklioitem + dujuitem
+                document.getElementById("kainas").innerHTML = `${skaiciausFormatas(spalvos[spalva].tikrakaina)}€`
+
+                spalvossuma = spalvos[spalva].tikrakaina;
+                document.getElementById("suma").textContent = `${skaiciausFormatas(spalvossuma + varikliosuma + dujusuma + kaina)}€`
+
+                mp.trigger('grp:mpspalva', spalvos[spalva].real)
+            }
+        }
+
+        function variklisnext() {
+            if(variklis < varikliai.length-1) {
+                variklis++;
+                variklioitem = `<span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Variklis (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">${skaiciausFormatas(varikliai[variklis].tikrakaina)}€</span>)<br>`
+                document.getElementById("variklis").textContent = varikliai[variklis].variklis;
+                document.getElementById("daiktai").innerHTML = spalvositem + variklioitem + dujuitem
+                document.getElementById("kainav").innerHTML = `${skaiciausFormatas(varikliai[variklis].tikrakaina)}€`
+
+                varikliosuma = varikliai[variklis].tikrakaina;
+                document.getElementById("suma").textContent = `${skaiciausFormatas(spalvossuma + varikliosuma + dujusuma + kaina)}€`
+            }
+        }
+
+        function variklisback() {
+            if(variklis > 0) {
+                variklis--;
+                variklioitem = `<span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Variklis (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">${skaiciausFormatas(varikliai[variklis].tikrakaina)}€</span>)<br>`
+                document.getElementById("variklis").textContent = varikliai[variklis].variklis;
+                document.getElementById("daiktai").innerHTML = spalvositem + variklioitem + dujuitem
+                document.getElementById("kainav").innerHTML = `${skaiciausFormatas(varikliai[variklis].tikrakaina)}€`
+
+                varikliosuma = varikliai[variklis].tikrakaina;
+                document.getElementById("suma").textContent = `${skaiciausFormatas(spalvossuma + varikliosuma + dujusuma + kaina)}€`
+            }
+        }
+
+        function dujosnext() {
+            if(dujos < dujulist.length-1) {
+                dujos++;
+                dujuitem = `<span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Dujos (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">${skaiciausFormatas(dujulist[dujos].tikrakaina)}€</span>)<br>`
+                document.getElementById("dujos").textContent = dujulist[dujos].dujos;
+                document.getElementById("daiktai").innerHTML = spalvositem + variklioitem + dujuitem
+                document.getElementById("kainar").innerHTML = `${skaiciausFormatas(dujulist[dujos].tikrakaina)}€`
+				
+				dujusuma = dujulist[dujos].tikrakaina;
+                document.getElementById("suma").textContent = `${skaiciausFormatas(spalvossuma + varikliosuma + dujusuma + kaina)}€`
+            }
+        }
+
+        function dujosback() {
+            if(dujos > 0) {
+                dujos--;
+                dujuitem = `<span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Dujos (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">${skaiciausFormatas(dujulist[dujos].tikrakaina)}€</span>)<br>`
+                document.getElementById("dujos").textContent = dujulist[dujos].dujos;
+                document.getElementById("daiktai").innerHTML = spalvositem + variklioitem + dujuitem
+                document.getElementById("kainar").innerHTML = `${skaiciausFormatas(dujulist[dujos].tikrakaina)}€`
+				
+				dujusuma = dujulist[dujos].tikrakaina;
+                document.getElementById("suma").textContent = `${skaiciausFormatas(spalvossuma + varikliosuma + dujusuma + kaina)}€`
+            }
+        }
+
+        var tikrakaina;
+        var kaina;
+        var pav;
+
+        function pirkti(pav, kainele, modelis, top, varomi, laikas, bakas) {
+            document.getElementById("top").textContent = `${top}`
+            document.getElementById("bakas").textContent = `${bakas}`
+            document.getElementById("laikas").textContent = `${laikas}`
+            document.getElementById("varomi").textContent = `${varomi}`
+
+            document.getElementById("kaina").textContent = `${skaiciausFormatas(kainele)}€`
+            document.getElementById("modelis").textContent = `${pav}`
+            document.getElementById("suma").textContent = `${skaiciausFormatas(kainele)}€`
+
+            pavadinimas = pav;
+            kaina = kainele;
+            model = modelis;
+            maxkuras = bakas
+        }
+
+        $(document).on('click', "#pirkti", function() {
+            mp.trigger('grp:mmokejimas', pavadinimas, spalvossuma + varikliosuma + dujusuma + kaina, model, spalvos[spalva].real, varikliai[variklis].real, dujulist[dujos].real, maxkuras)
+        });
+
+        $(document).on('keydown', document, function(e) {
+            if(e.which == 27) {
+                mp.trigger('grp:muzdaryti')
+            }
+        });
+
+    </script>
+</head>
+    <div class="deze">
+        <div class="dezes-linija"></div>
+        <!-- Informacija  -->
+        <div class="deze2">
+            <div class="infobox"></div>
+            <h1 class="infobox-pirkimas"><span id="modelis" style="color:rgba(225, 135, 18);">Vapid Infernus</span> pirkimas</h1>
+            <h1 class="infobox-kaina">Kaina: <span id="kaina" style="color:rgba(225, 135, 18);">100,000€</span></h1>
+        </div>
+        <!-- Išsami informacija -->
+        <div class="greitis">
+            <img src="style/greitis.png" width="7.2%;" class="greitis-nuotrauka">
+            <h1 class="greitis-info">Didžiausias greitis: <span id="top" style="font-family:encode-bold;background-image: linear-gradient(to right, rgba(225, 135, 18) 0%, rgba(195, 9, 197) 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">128km/h</span></h1>
+        </div>
+        <div class="bakas">
+            <img src="style/bakas.png" width="7.2%;" class="bakas-nuotrauka">
+            <h1 class="bakas-info">Bako talpa: <span id="bakas" style="font-family:encode-bold;background-image: linear-gradient(to right, rgba(225, 135, 18) 0%, rgba(195, 9, 197) 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">200 L.</span></h1>
+        </div>
+        <div class="simtas">
+            <img src="style/100.png" width="9.0%;" class="simtas-nuotrauka">
+            <h1 class="simtas-info">0-100km/h: <span id="laikas" style="font-family:encode-bold;background-image: linear-gradient(to right, rgba(225, 135, 18) 0%, rgba(195, 9, 197) 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">5.2 s.</span></h1>
+        </div>
+        <div class="varomieji">
+            <img src="style/varomi.png" width="8.2%;" class="varomieji-nuotrauka">
+            <h1 class="varomieji-info">Varomieji ratai: <span id="varomi" style="font-family:encode-bold;background-image: linear-gradient(to right, rgba(225, 135, 18) 0%, rgba(195, 9, 197) 100%);-webkit-background-clip: text;-webkit-text-fill-color: transparent;">Galiniai</span></h1>
+        </div>
+        <!-- Išbandymas -->
+        <div class="deze3">
+            <div class="dezes3-linija"></div>
+            <div class="infobox2"></div>
+            <img src="style/info.png" width="4.5%;" class="infobox2-nuotrauka">
+            <h1 class="infobox2-tekstas">Laikykite dešinį pelės mygtuką kameros sukimui.</h1>
+            <h1 class="infobox2-bandyti">Po <span style="color:red">45 sekundžių</span> būsite išspirtas iš automobilio!</h1>
+        </div>
+        <!-- Tune keitimai -->
+        <div class="deze4">
+            <div class="perdazymas-header">
+                <h1 class="perdazymas-header-tekstas">Ar norite perdažyti automobilį?</h1>
+            </div>
+            <div class="perdazymas-deze">
+                <h1 class="perdazymas-spalva" id="spalva">Juoda</h1>
+                <h1 class="perdazymas-kaina" id="kainas">0€</h1>
+                <div class="kaire" onclick="spalvaback()"><h1 class="kaire-v"><</h1></div>
+                <div class="desine" onclick="spalvanext()"><h1 class="desine-v">></h1></div>
+            </div>
+
+            <div class="variklis-header">
+                <h1 class="variklis-header-tekstas">Ar norite patobulinti variklį?</h1>
+            </div>
+            <div class="variklis-deze">
+                <h1 class="variklis-lygis" id="variklis">0 Lygis</h1>
+                <h1 class="variklis-kaina" id="kainav">0€</h1>
+                <div class="kaire" onclick="variklisback()"><h1 class="kaire-v"><</h1></div>
+                <div class="desine" onclick="variklisnext()"><h1 class="desine-v">></h1></div>
+            </div>
+
+            <div class="dujos-header">
+                <h1 class="dujos-header-tekstas">Ar norite instaliuoti dujas?</h1>
+            </div>
+            <div class="dujos-deze">
+                <h1 class="dujos-ratlankis" id="dujos">Ne</h1>
+                <h1 class="dujos-kaina" id="kainar">0€</h1>
+                <div class="kaire" onclick="dujosback()"><h1 class="kaire-v"><</h1></div>
+                <div class="desine" onclick="dujosnext()"><h1 class="desine-v">></h1></div>
+            </div>
+        </div>
+        <!-- Bendra suma -->
+        <div class="deze5">
+            <h1 class="deze5-bendrakaina">Bendra kaina</h1>
+            <div class="deze5-linija"></div>
+            <h1 class="daiktai" id="daiktai"><span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Spalva (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">0€</span>)<br><span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Variklis (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">0€</span>)<br><span style="font-family:encode-lig; color: rgb(113, 219, 14);">+</span> Dujos (<span style="font-family:encode-lig; color: rgb(113, 219, 14);">0€</span>)</h1>
+            <div class="deze5-linija2"></div>
+            <h1 class="deze5-isviso">Iš viso mokėti:</h1>
+            <h1 class="deze5-suma" id="suma">100000€</h1>
+        </div>
+        <div class="dezes5-linija"></div>
+
+        <button class="pirkti" id="pirkti">Pirkti</button>
+    </div>
+</html>

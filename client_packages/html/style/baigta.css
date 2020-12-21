@@ -1,0 +1,130 @@
+@font-face {
+    font-family: EncodeBold;
+    src: url(EncodeBold.ttf);
+}
+
+@font-face {
+    font-family: EncodeSemi;
+    src: url(EncodeSemi.ttf);
+}
+
+@font-face {
+    font-family: FarroReg;
+    src: url(FarroReg.ttf);
+}
+
+@font-face {
+    font-family: FarroLig;
+    src: url(FarroLig.ttf);
+}
+
+@font-face {
+    font-family: Exo;
+    src: url(exo.ttf);
+}
+
+@font-face {
+    font-family: medium;
+    src: url(medium.ttf);
+}
+
+@font-face {
+    font-family: regular;
+    src: url(regular3.ttf);
+}
+
+body {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+}
+
+.box {
+    width: 28vw;
+    height: 11.2vw;
+    background-color: rgba(0, 0, 0, 0.504);
+
+    overflow: hidden;
+
+    /* Senas triukas :D */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom-left-radius: 1vh;
+    border-top-right-radius: 1vh;
+
+    border: solid 0.6vw rgba(0, 0, 0, 0.13);
+}
+
+.boxdelgrozio {
+    position: fixed;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 0 6vw 6vw 0;
+    right: 0;
+    border-color: transparent #00000059 transparent transparent;
+}
+
+.boxdelgroziodu {
+    position: fixed;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 6vw 0 0 6vw;
+    left: 0;
+    bottom: 0;
+    border-color: transparent #00000059 transparent #00000059;
+}
+
+.pavadinimas {
+    font-family: regular;
+    font-size: 1.3vw;
+    color: rgb(235, 235, 235);
+
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.info {
+    font-family: regular;
+    font-size: 0.95vw;
+    color: rgb(235, 235, 235);
+
+    position: fixed;
+    font-weight: 100;
+    width: 70%;
+    text-align: center;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.mygtukas {
+    width: 14vw;
+    height: 2.6vw;
+    background-color: rgba(0, 0, 0, 0.116);
+    transition: all 0.3s ease-in-out;
+    color: rgb(245, 245, 245);
+    font-family: medium;
+    font-size: 0.95vw;
+    outline: 0;
+    border: 0;
+    border-radius: 0.3vw;
+
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, 85%);
+}
+
+.mygtukas:hover {
+    background-color: rgba(0, 0, 0, 0.205);
+}

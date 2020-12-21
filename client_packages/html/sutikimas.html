@@ -1,0 +1,39 @@
+<!-- Labai paprastutis logino meniu, bet asmeniškai gražus -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style/sutikimas.css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function patvirtinimas(pavadinimas, info, funkcijele) {
+            document.getElementById("pavadinimas").innerHTML = pavadinimas
+            document.getElementById("info").innerHTML = info
+            funkcija = funkcijele;
+        }
+
+        $(document).on('click', "#taip", function() {
+            mp.trigger(`${funkcija}`, "");
+        });
+        
+        $(document).on('click', "#ne", function() {
+            mp.trigger(`${funkcija}`, "close");
+        });
+
+        $(document).on('keydown', document, function(e) {
+            if(e.which == 27) {
+                mp.trigger(`${funkcija}`, "close");
+            }
+        });
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class="icon"></div>
+        <h1 class="pavadinimas" id="pavadinimas"></h1>
+        <h1 class="info" id="info"></h1>
+
+        <button class="taip" id="taip">Taip</button>
+        <button class="ne" id="ne">Ne</button>
+    </div>
+</body>
+</html>

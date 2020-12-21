@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="vendor/latofonts.css" media="screen">
+</head>
+<script> function gautiVersija(versija) { document.getElementById("versija").textContent="FiveSA | " + versija; } </script>
+<style>
+    body {
+        -webkit-user-drag: none;
+        -khtml-user-drag: none;
+        -moz-user-drag: none;
+        -o-user-drag: none;
+        user-select: none;
+    }
+
+    .tekstas {
+        position: fixed;
+        bottom: -0.7%;
+        right: 0.6%;
+
+        font-family: 'Lato', sans-serif;
+        font-weight: 700;
+        font-size: 18px;
+        animation: rainbowas 5s infinite;
+    }
+    
+    /* Ši spalvų paletė paimta iš stackoverflow, kieno ji neatsimenu. */
+    @-webkit-keyframes rainbowas{
+        0% { color: orange; }	
+        10% { color: purple; }	
+        20% { color: red; }
+        30% { color: cadetblue; }
+        40% { color: yellow; }
+        50% { color: coral; }
+        60% { color: green; }
+        70% { color: cyan; }
+        80% { color: deeppink; }
+        90% { color: dodgerblue; }
+        100% { color: orange; }
+    }
+</style>
+<body>
+    <p class="tekstas" id="versija">FiveSA</p>
+</body>
+</html>

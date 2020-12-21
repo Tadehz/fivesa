@@ -1,0 +1,29 @@
+<!-- Labai paprastutis logino meniu, bet asmeniškai gražus -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style/baigta.css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function baigta(title, informacija, funkcijele) {
+            document.getElementById("pavadinimas").textContent = title;
+            document.getElementById("info").innerHTML = informacija;
+            funkcija = funkcijele;
+        }
+
+        $(document).on('click', "#mygtukas", function() {
+            mp.trigger(`${funkcija}`);
+        });
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+        <div class='boxdelgrozio'></div>
+        <h1 class="pavadinimas" id="pavadinimas"></h1>
+        <h1 class="info" id="info"></h1>
+
+        <button class="mygtukas" id="mygtukas">Baigti</button>
+        <div class='boxdelgroziodu'></div>
+    </div>
+</body>
+</html>

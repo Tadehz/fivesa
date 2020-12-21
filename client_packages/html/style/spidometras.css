@@ -1,0 +1,335 @@
+@font-face {
+    font-family: bold;
+    src: url(bold.ttf);
+}
+
+@font-face {
+    font-family: semibold;
+    src: url(semibold.ttf);
+}
+
+@font-face {
+    font-family: extrabold;
+    src: url(extrabold.ttf);
+}
+
+@font-face {
+    font-family: medium;
+    src: url(medium.ttf);
+}
+
+body {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+}
+
+.litrai {
+    position: fixed;
+    bottom: 10vw;
+    left: 18%;
+    transform: translate(-50%, 0%);
+    
+    font-family: bold;
+    font-size: 1.3vw;
+    color: rgba(234, 234, 234);
+}
+
+.spidometras {
+    position: fixed;
+    bottom: 0%;
+    left: 17.3vw;
+}
+
+.kurojuosta {
+    position: fixed;
+    bottom: 3.2vw;
+
+    width: 1.15vw;
+    height: 7.4vw;
+    background-color: rgba(255, 255, 255, 0.479);
+
+    border-top-right-radius: 0.3vw;
+    border-top-left-radius: 0.3vw;
+    overflow: hidden;
+}
+
+.kurojuostosuzpildymas {
+    position: absolute;
+    bottom: 0;
+
+    width: 1.15vw;
+    background-color: rgba(248, 167, 38);
+}
+
+.degalai {
+    position: fixed;
+    bottom: 1.0vw;
+    left: 17.2vw;
+
+    width: 1.5vw;
+}
+
+.procentai {
+    position: fixed;
+    bottom: 8vw;
+    left: 20.4%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: bold;
+    font-size: 0.9vw;
+    color: rgba(234, 234, 234);
+}
+
+.dujujuosta {
+    position: fixed;
+    bottom: 3.2vw;
+    left: 19.9vw;
+
+    width: 0.85vw;
+    height: 5.7vw;
+    background-color: rgba(255, 255, 255, 0.479);
+
+    border-top-right-radius: 0.3vw;
+    border-top-left-radius: 0.3vw;
+    overflow: hidden;
+}
+
+.dujujuostosuzpildymas {
+    position: absolute;
+    bottom: 0;
+
+    width: 0.85vw;
+    background-color: rgba(54, 155, 192);
+}
+
+.dujos {
+    position: fixed;
+    bottom: 1.1vw;
+    left: 19.8vw;
+
+    width: 1.1vw;
+    height: 1.3vw;
+}
+
+/* Spidometras */
+
+.virsus {
+    position: fixed;
+    bottom: 6.5vw;
+    left: 22.1vw;
+
+    width: 11.2vw;
+    height: 2vw;
+    background-color: rgba(255, 255, 255, 0.377);
+    border-top: solid 0.3vw rgba(248, 167, 38);
+
+    border-top-right-radius: 0.3vw;
+    border-bottom-right-radius: 0.3vw;
+}
+
+.greitis {
+    position: fixed;
+    bottom: 4.7vw;
+    left: 24%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: extrabold;
+    font-size: 1.5vw;
+    color: rgb(234, 234, 234);
+}
+
+.kmh {
+    position: fixed;
+    bottom: 5.8vw;
+    left: 26.55%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: medium;
+    font-weight: 500;
+    font-size: 0.9vw;
+    color: rgba(234, 234, 234);
+}
+
+.linija {
+    position: fixed;
+    bottom: 6.9vw;
+    left: 28.2vw;
+
+    width: 0.1vw;
+    height: 1.2vw;
+    background-color: rgba(255, 255, 255, 0.76);
+}
+
+.kurosanaudostitle {
+    position: fixed;
+    bottom: 6.65vw;
+    left: 30.75%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: medium;
+    font-weight: 500;
+    font-size: 0.65vw;
+    color: rgba(234, 234, 234);
+}
+
+.kurosanaudos {
+    position: fixed;
+    bottom: 5.85vw;
+    left: 30.75%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: semibold;
+    font-weight: 500;
+    font-size: 0.65vw;
+    color: rgba(248, 167, 38);
+}
+
+.vidurys {
+    position: fixed;
+    bottom: 4.9vw;
+    left: 22.1vw;
+
+    width: 9.5vw;
+    height: 1.15vw;
+    background-color: rgba(255, 255, 255, 0.377);
+
+    border-top-right-radius: 0.3vw;
+    border-bottom-right-radius: 0.3vw;
+}
+
+.bukle {
+    position: fixed;
+    bottom: 2.9vw;
+    left: 22.6%;
+    float: left;
+
+    font-family: medium;
+    font-weight: 500;
+    font-size: 0.7vw;
+    color: rgba(234, 234, 234);
+}
+
+.apacia {
+    position: fixed;
+    bottom: 3.2vw;
+    left: 22.1vw;
+
+    width: 8.5vw;
+    height: 1.15vw;
+    background-color: rgba(255, 255, 255, 0.377);
+
+    border-top-right-radius: 0.3vw;
+    border-bottom-right-radius: 0.3vw;
+}
+
+.stotis {
+    position: fixed;
+    bottom: 4.6vw;
+    left: 22.6%;
+    float: left;
+
+    font-family: medium;
+    font-weight: 500;
+    font-size: 0.7vw;
+    color: rgba(234, 234, 234);
+}
+
+/* Apsukos */
+
+.apsukos {
+    position: fixed;
+    bottom: 0.9vw;
+    left: 22%;
+
+    width: 1.8vw;
+}
+
+.apsukulinija {
+    position: fixed;
+    bottom: 1.35vw;
+    left: 23.55%;
+
+    width: 7.4vw;
+    height: 0.95vw;
+    background-color: rgba(255, 255, 255, 0.479);
+
+    border-top-right-radius: 0.4vw;
+    border-bottom-right-radius: 0.4vw;
+}
+
+.apsukulinijosuzpildymas {
+    position: fixed;
+    bottom: 1.35vw;
+    left: 23.55%;
+	width: 2.4vw;
+
+    height: 0.95vw;
+    background-color: rgba(248, 167, 38);
+}
+
+.apsukuraudonalinija {
+    position: fixed;
+    bottom: 1.35vw;
+    left: 29.6%;
+
+    width: 1.4vw;
+    height: 0.95vw;
+    background-color: rgba(207, 24, 24, 0.726);
+
+    border-top-right-radius: 0.4vw;
+    border-bottom-right-radius: 0.4vw;
+}
+
+.septynilinija {
+    position: fixed;
+    bottom: 1.35vw;
+    left: 29.6%;
+
+    width: 0.1vw;
+    height: 0.7vw;
+    background-color: rgba(255, 255, 255, 0.507);
+}
+
+.tryslinija {
+    position: fixed;
+    bottom: 1.35vw;
+    left: 25.9%;
+
+    width: 0.1vw;
+    height: 0.7vw;
+    background-color: rgba(255, 255, 255, 0.507);
+}
+
+.septynilinijatekstas {
+    position: fixed;
+    bottom: -0.4vw;
+    left: 29.6%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: medium;
+    font-weight: 500;
+    font-size: 0.65vw;
+    color: rgba(234, 234, 234, 0.507);
+}
+
+.tryslinijatekstas {
+    position: fixed;
+    bottom: -0.4vw;
+    left: 25.9%;
+
+    transform: translate(-50%, -50%);
+
+    font-family: medium;
+    font-weight: 500;
+    font-size: 0.65vw;
+    color: rgba(234, 234, 234, 0.507);
+}

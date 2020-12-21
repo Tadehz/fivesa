@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script>
+        function paleisti(nuoroda) {
+            // Jei jau buvo paleista, paprasčiausiai seną sustabdome/užpauziname.
+            if(typeof daina != 'undefined') {
+                daina.pause();
+                daina = new Audio(nuoroda);
+                // Garso nustatymai, galbūt ateityje.
+                daina.volume = 0.2;
+                daina.play();
+                return;
+            }
+            daina = new Audio(nuoroda);
+            // Garso nustatymai, galbūt ateityje.
+            daina.volume = 0.2;
+            daina.play();
+        }
+    </script>
+</head>
+</html>

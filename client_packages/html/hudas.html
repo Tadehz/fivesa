@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style/hud.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        // Number with Commas function by Kerry [Simplified by someone else lol]
+        function skaiciausFormatas(skaicius) {
+            return skaicius.toString().replace(/\B(?<!\.\d*)(?=(\d{3})+(?!\d))/g, ",");
+        }
+
+        function nustatytipinigus(pinigai, banke) {
+            document.getElementById("pinigai").innerHTML=`<span style="color:rgb(114, 219, 27)">€</span> ${skaiciausFormatas(pinigai)}`;
+            document.getElementById("banko").innerHTML=`<span style="color:rgb(221, 174, 20)">€</span> ${skaiciausFormatas(banke)}`;
+        }
+
+        function naujintilaika(laikas) {
+            document.getElementById("laikas").textContent=laikas;
+        }
+    </script>
+</head>
+<body>
+    <img src="style/pinigine.png" class="pinigine">
+    <h1 class="pinigai" id="pinigai"><span style="color:rgb(114, 219, 27)">€</span> 500,000</h1>
+
+    <img src="style/bankas.png" class="bankine">
+    <h1 class="bankas" id="banko"><span style="color:rgb(221, 174, 20)">€</span> 115,615</h1>
+
+    <img src="style/laikas.png" class="laikine">
+    <h1 class="laikas"><span style="color:rgb(184, 184, 184)" id="laikas">20:30</h1>
+</body>
+</html>

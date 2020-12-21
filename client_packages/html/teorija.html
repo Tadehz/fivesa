@@ -1,0 +1,36 @@
+<!-- Labai paprastutis logino meniu, bet asmeniškai gražus -->
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" type="text/css" href="style/teorija.css" media="screen">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        function klausimas(nr, klausimas, a, b) {
+            document.getElementById("nr").textContent = nr;
+            document.getElementById("pavadinimas").textContent = klausimas;
+            document.getElementById("avariantas").textContent = a;
+            document.getElementById("bvariantas").textContent = b;
+        }
+
+        $(document).on('click', "#a", function() {
+            mp.trigger(`grp:vmatsakymas`, "a");
+        });
+
+        $(document).on('click', "#b", function() {
+            mp.trigger(`grp:vmatsakymas`, "b");
+        });
+    </script>
+</head>
+<body>
+    <div class="box" id="box">
+
+        <h1 class="nr" id="nr">0</h1>
+        <h1 class="pavadinimas" id="pavadinimas"></h1>
+        <h1 class="avariantas">A</h1><h1 class="avariantotekstas" id="avariantas"></h1>
+        <h1 class="bvariantas">B</h1><h1 class="bvariantotekstas" id="bvariantas"></h1>
+        <button class="a" id="a"><b>A</b> Variantas</button>
+        <button class="b" id="b"><b>B</b> Variantas</button>
+
+    </div>
+</body>
+</html>

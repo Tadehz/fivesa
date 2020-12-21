@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style/mvaldymas.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var spalvos = [
+            {spalva: "Juoda", tikrakaina: 0, real: 0},
+            {spalva: "Balta", tikrakaina: 1000, real: 111},
+            {spalva: "Raudona", tikrakaina: 1000, real: 27},
+            {spalva: "Žalia", tikrakaina: 1000, real: 53},
+            {spalva: "Mėlyna", tikrakaina: 1000, real: 64},
+            {spalva: "Žydra", tikrakaina: 2000, real: 70},
+            {spalva: "Geltona", tikrakaina: 2000, real: 88},
+            {spalva: "Oranžinė", tikrakaina: 2000, real: 38},
+            {spalva: "Rožinė", tikrakaina: 2000, real: 135},
+            {spalva: "Violetinė", tikrakaina: 1000, real: 145},
+            {spalva: "Auksinė", tikrakaina: 100000, real: 158}
+        ]
+
+        var varikliai = [
+            {variklis: "0 lygis", tikrakaina: 0, real: -1},
+            {variklis: "1 lygis", tikrakaina: 30000, real: 0},
+            {variklis: "2 lygis", tikrakaina: 75000, real: 1},
+            {variklis: "3 lygis", tikrakaina: 100000, real: 2},
+            {variklis: "4 lygis", tikrakaina: 250000, real: 3}
+        ]
+
+        function valdymas(pavadinimas, modelis, numeriai, uzrakinta, maxkuras, kuras, bukle, dujos, spalva, variklis) {
+            document.getElementById("modelis").textContent = pavadinimas;
+
+            document.getElementById("statusas").style.color = "rgb(209, 20, 20)";
+            document.getElementById("statusas").textContent = "Sudaužyta";
+            if(bukle != 0) {
+                document.getElementById("statusas").style.color = "rgb(23, 185, 23)";
+                document.getElementById("statusas").textContent = "Nesudaužyta";
+            }
+
+            document.getElementById("kuras").textContent = `${kuras} L.`;
+            document.getElementById("bukle").textContent = `${bukle}%`;
+            if(uzrakinta == "false") {
+                document.getElementById("raktas").textContent = "Ne";
+            } else {
+                document.getElementById("raktas").textContent = "Taip";
+            }
+
+            for(i = 0; i < varikliai.length; i++) {
+                if(varikliai[i].real == variklis) {
+                    var varikliotekstas = `Variklis <span style="color:rgba(218, 40, 206);">(${varikliai[i].variklis})</span><br>`
+                }
+            }
+
+            for(i = 0; i < spalvos.length; i++) {
+                if(spalvos[i].real == spalva) {
+                    var spalvostekstas = `Spalva <span style="color:rgba(218, 40, 206);">(${spalvos[i].spalva})</span><br>`
+                }
+            }
+
+            var dujutekstas = ` <span style="color:rgba(218, 40, 206);">Dujos</span><br>`
+            if(dujos == -1)
+                var dujutekstas = ``
+
+            document.getElementById("modifikacija").innerHTML = dujutekstas + varikliotekstas + spalvostekstas
+            model = modelis;
+            pavadinimas = pavadinimas;
+        }
+
+        $(document).on('click', "#atsaukti", function() {
+            mp.trigger('grp:matsaukti');
+        });
+
+        $(document).on('keydown', document, function(e) {
+            if(e.which == 27) {
+                mp.trigger('grp:matsaukti');
+            }
+        });
+
+
+        $(document).on('click', "#remontas", function() {
+            mp.trigger('grp:mremontuoti');
+        });
+
+        $(document).on('click', "#kelti", function() {
+            mp.trigger('grp:mkelti');
+        });
+
+        $(document).on('click', "#variklis", function() {
+            mp.trigger('grp:mvariklis');
+        });
+
+        $(document).on('click', "#raktas", function() {
+            mp.trigger('grp:mraktas');
+        });
+
+        $(document).on('click', "#lokacija", function() {
+            mp.trigger('grp:mzemelapis');
+        });
+
+        $(document).on('click', "#isspirti", function() {
+            mp.trigger('grp:misspirti');
+        });
+
+        $(document).on('click', "#parduoti", function() {
+            mp.trigger('grp:mparduoti', model);
+        });
+    </script>
+</head>
+<body>
+    <div class="deze">
+        <div class="dezes-linija"></div>
+        <!-- Informacija  -->
+        <div class="deze2">
+            <div class="infobox"></div>
+            <h1 class="infobox-masina"><span id="modelis" style="color:rgba(218, 40, 206);">Vapid Infernus</span> valdymas</h1>
+            <h1 class="infobox-statusas">Statusas: <span id="statusas" style="color:rgb(20, 209, 20);font-family: encode-semi;">Sudaužyta</span></h1>
+        </div>
+
+        <div class="background"></div>
+        <div class="kuras">
+            <img src="style/bakas.png" class="bakas">
+            <h1 class="kuras-tekstas">Kuras: <span style="color:rgba(218, 40, 206);font-family:encode-semi" id="kuras">128 L.</span></h1>
+        </div>
+        <div class="bukle">
+            <img src="style/bukle.png" class="bukle-img">
+            <h1 class="bukle-tekstas">Būklė: <span style="color:rgba(218, 40, 206);font-family:encode-semi" id="bukle">100%</span></h1>
+        </div>
+        <div class="raktas">
+            <img src="style/raktas.png" class="raktas-img">
+            <h1 class="raktas-tekstas">Užrakinta: <span style="color:rgba(218, 40, 206);font-family:encode-semi" id="raktas">Taip</span></h1>
+        </div>
+        <div class="kita">
+            <h1 class="title">Modifikacijos</h1>
+            <div class="title-linija"></div>
+            <h1 class="modifikacija" id="modifikacija"></h1>
+        </div>
+        <!-- Mygtukai -->
+        <button class="mygtukas" style="background-color: rgba(0, 0, 0, 0.397);" id="isspirti">Išspirti visus iš tr. priemonės</button>
+        <button class="mygtukas" style="background-color: rgba(0, 0, 0, 0.212);margin-top: 2.3vw;" id="raktas">Užrakinti/atrakinti tr. priemonę</button>
+        <button class="mygtukas" style="background-color: rgba(0, 0, 0, 0.397);margin-top: 4.6vw;" id="parduoti">Skubiai parduoti automobilį</button>
+        <button class="mygtukas" style="background-color: rgba(0, 0, 0, 0.212);margin-top: 6.9vw;" id="lokacija">Automobilio lokacija žemėlapyje</button>
+        <button class="mygtukas" style="background-color: rgba(0, 0, 0, 0.397);margin-top: 9.2vw;" id="variklis">Įjungti/išjungti variklį</button>
+        <div class="line2"></div>
+        <button class="mokamasmygtukas" id="remontas" style="background-color: rgba(0, 0, 0, 0.212);margin-top: 11.5vw;">Remontuoti tr. priemonę <span style="text-align: right; float: right;color: rgb(15, 194, 15);font-family:encode-semi;">5,000€</span></button>
+        <button class="mokamasmygtukas" id="kelti" style="background-color: rgba(0, 0, 0, 0.397);margin-top: 13.8vw;">Nukelti tr. priemonę į KMA <span style="text-align: right; float: right;color: rgb(15, 194, 15);font-family:encode-semi;">2,500€</span></button>
+        <button class="atsaukti" id="atsaukti">Atšaukti</button>
+    </div>
+</body>
+</html>

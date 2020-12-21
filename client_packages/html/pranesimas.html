@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="style/pranesimai.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script>
+        var lastzinute;
+        function pranesimas(tipas, zinute, laikas) {
+            if(lastzinute != zinute) {
+                if(typeof laikmatisvienas != 'undefined' && typeof laikmatis != 'undefined') {
+                    clearTimeout(laikmatisvienas)
+                    clearTimeout(laikmatis)
+
+                    lastzinute = zinute;
+                    $("#linija").stop();
+                    document.getElementById("dezute").classList.remove("animacija")
+                    
+                    laikmatistrys = setTimeout(() => {
+                        document.getElementById("linija").style.width = `100%`;
+                        document.getElementById("linija").style.backgroundColor = `rgb(130, 200, 21)`;
+                        document.getElementById("tekstas").innerHTML = zinute;
+                        document.getElementById("ikona").src = "style/veikia.png"
+                        if(tipas == "klaida") {
+                            document.getElementById("linija").style.backgroundColor = `rgb(212, 21, 21)`;
+                            document.getElementById("ikona").src = "style/neveikia.png"
+                        }
+
+                        document.getElementById("dezute").classList.add("animacija")
+
+                        laikmatisvienas = setTimeout(() => {
+                            $("#linija").animate({width: '0%'}, laikas, "linear")
+                        }, 300);
+                        laikmatis = setTimeout(() => {
+                            document.getElementById("dezute").classList.remove("animacija")
+                            setTimeout(() => {
+                                delete laikmatisvienas
+                                delete laikmatis
+                            }, 1000);
+                        }, laikas);
+                    }, 1000);
+                } else {
+                    lastzinute = zinute;
+                    document.getElementById("linija").style.width = `100%`;
+                    document.getElementById("linija").style.backgroundColor = `rgb(130, 200, 21)`;
+                    document.getElementById("tekstas").innerHTML = zinute;
+                    document.getElementById("ikona").src = "style/veikia.png"
+                    if(tipas == "klaida") {
+                        document.getElementById("linija").style.backgroundColor = `rgb(212, 21, 21)`;
+                        document.getElementById("ikona").src = "style/neveikia.png"
+                    }
+
+                    document.getElementById("dezute").classList.add("animacija")
+
+                    laikmatisvienas = setTimeout(() => {
+                        $("#linija").animate({width: '0%'}, laikas, "linear")
+                    }, 300);
+                    laikmatis = setTimeout(() => {
+                        document.getElementById("dezute").classList.remove("animacija")
+                        setTimeout(() => {
+                            delete laikmatisvienas
+                            delete laikmatis
+                        }, 1000);
+                    }, laikas);
+                }
+            } else if(typeof laikmatis == 'undefined' && typeof laikmatisvienas == 'undefined') {
+                lastzinute = zinute;
+                $("#linija").stop();
+                document.getElementById("linija").style.width = `100%`;
+                document.getElementById("linija").style.backgroundColor = `rgb(130, 200, 21)`;
+                document.getElementById("tekstas").innerHTML = zinute;
+                document.getElementById("ikona").src = "style/veikia.png"
+                if(tipas == "klaida") {
+                    document.getElementById("linija").style.backgroundColor = `rgb(212, 21, 21)`;
+                    document.getElementById("ikona").src = "style/neveikia.png"
+                }
+
+                document.getElementById("dezute").classList.add("animacija")
+
+                laikmatisvienas = setTimeout(() => {
+                    $("#linija").animate({width: '0%'}, laikas, "linear")
+                }, 300);
+                laikmatis = setTimeout(() => {
+                    document.getElementById("dezute").classList.remove("animacija")
+                    setTimeout(() => {
+                        delete laikmatisvienas
+                        delete laikmatis
+                    }, 1000);
+                }, laikas);
+            }
+        }
+    </script>
+</head>
+<body>
+    <div class="dezute" id="dezute">
+        <img class="ikonele" src="style/neveikia.png" id="ikona">
+        <h1 id="tekstas">Šis automobilis užrakintas ir priklauso <span style="color:rgb(223, 13, 13)">Tadeh_Meh</span></h1>
+        <div class="linija" id="linija"></div>
+    </div>
+</body>
+</html>

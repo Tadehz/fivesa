@@ -1,0 +1,64 @@
+@font-face {
+    font-family: regular;
+    src: url(regular.ttf)
+}
+
+body {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+}
+
+.dezute {
+    position: fixed;
+    bottom: 5%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+    overflow: hidden;
+    max-width: 0vw;
+
+    height: 2.3vw;
+    background-color: rgba(0, 0, 0, 0.582);
+    border-top: solid 0.3vw black;
+
+    transition: 1s linear all;
+}
+
+h1 {
+    position: relative;
+    white-space: nowrap;
+    bottom: 0%;
+
+    font-family: regular;
+    font-weight: 100;
+    font-size: 0.80vw;
+    color: rgb(235, 235, 235);
+
+    padding-left: 2.6vw;
+    padding-right: 1vw;
+}
+
+.ikonele {
+    position: absolute;
+    bottom: 22%;
+    left: 0.6vw;
+
+    width: 1.4vw;
+    opacity: 0.9;
+}
+
+.linija {
+    position: absolute;
+
+    height: 0.13vw;
+    bottom: 0;
+    background-color: rgb(212, 21, 21);
+    width: 100%;
+}
+
+.animacija {
+    bottom: 5%; 
+    max-width: 50vw;
+}

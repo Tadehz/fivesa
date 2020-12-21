@@ -1,0 +1,129 @@
+@font-face {
+    font-family: EncodeBold;
+    src: url(EncodeBold.ttf);
+}
+
+@font-face {
+    font-family: EncodeSemi;
+    src: url(EncodeSemi.ttf);
+}
+
+@font-face {
+    font-family: FarroReg;
+    src: url(FarroReg.ttf);
+}
+
+@font-face {
+    font-family: FarroLig;
+    src: url(FarroLig.ttf);
+}
+
+@font-face {
+    font-family: Exo;
+    src: url(exo.ttf);
+}
+
+@font-face {
+    font-family: medium;
+    src: url(medium.ttf);
+}
+
+@font-face {
+    font-family: regular;
+    src: url(regular3.ttf);
+}
+
+body {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+}
+
+.box {
+    width: 28vw;
+    height: 11.2vw;
+    background-color: rgba(0, 0, 0, 0.504);
+
+    overflow: hidden;
+
+    /* Senas triukas :D */
+    position: fixed;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    border-bottom-left-radius: 1vh;
+    border-top-right-radius: 1vh;
+
+    border: solid 0.6vw rgba(0, 0, 0, 0.13);
+}
+
+.pavadinimas {
+    font-family: regular;
+    font-size: 1.3vw;
+    color: rgb(235, 235, 235);
+
+    position: fixed;
+    width: 100%;
+    text-align: center;
+    top: 3%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.info {
+    font-family: regular;
+    font-size: 0.95vw;
+    color: rgb(235, 235, 235);
+
+    position: fixed;
+    font-weight: 100;
+    width: 70%;
+    text-align: center;
+    top: 22%;
+    left: 50%;
+    transform: translate(-50%, 0%);
+}
+
+.taip {
+    width: 9vw;
+    height: 2.2vw;
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.07);
+    color: rgb(245, 245, 245);
+    font-family: medium;
+    font-size: 1.05vw;
+    outline: 0;
+    border: 0;
+
+    position: fixed;
+    top: 57%;
+    left: 4%;
+    transform: translate(0%, 85%);
+}
+
+.ne {
+    width: 9vw;
+    height: 2.2vw;
+    transition: all 0.3s ease-in-out;
+    background-color: rgba(0, 0, 0, 0.07);
+    color: rgb(245, 245, 245);
+    font-family: medium;
+    font-size: 1.05vw;
+    outline: 0;
+    border: 0;
+
+    position: fixed;
+    top: 57%;
+    right: 4%;
+    transform: translate(0%, 85%);
+}
+
+.taip:hover {
+    color: rgb(194, 194, 194);
+}
+
+.ne:hover {
+    color: rgb(194, 194, 194);
+}

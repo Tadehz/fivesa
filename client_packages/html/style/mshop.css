@@ -1,0 +1,685 @@
+@font-face {
+    font-family: encode-semi;
+    src: url(semibold.ttf);
+}
+
+@font-face {
+    font-family: encode-bold;
+    src: url(bold.ttf);
+}
+
+@font-face {
+    font-family: encode-reg;
+    src: url(regular.ttf);
+}
+
+@font-face {
+    font-family: encode-lig;
+    src: url(light.ttf);
+}
+
+@font-face {
+    font-family: ibm-bold;
+    src: url(bold2.ttf);
+}
+
+@font-face {
+    font-family: droid-bold;
+    src: url(bold3.ttf);
+}
+
+@font-face {
+    font-family: encodes-med;
+    src: url(semimedium.ttf);
+}
+
+body {
+    -webkit-user-drag: none;
+    -khtml-user-drag: none;
+    -moz-user-drag: none;
+    -o-user-drag: none;
+    user-select: none;
+}
+
+img {
+    -webkit-user-drag: none;
+}
+
+.deze {
+    position: fixed;
+    top: 50%;
+    right: 4%;
+    transform: translateY(-50%);
+
+    width: 22.5%;
+    height: 36vw;
+    background-color: rgba(0, 0, 0, 0.432);
+
+    border-top-style: solid;
+    border-top-width: 0.2vw;
+    border-image-slice: 1;
+    border-image-source: linear-gradient(to right, rgba(225, 135, 18) 0%, rgba(195, 9, 197) 100%);
+
+    border-bottom-right-radius: 0.8vw;
+    border-bottom-left-radius: 0.8vw;
+
+    -webkit-transition: none !important;
+    -moz-transition: none !important;
+    -ms-transition: none !important;
+    -o-transition: none !important;
+}
+
+.dezes-linija {
+    width: 50%;
+    height: 1%;
+    background-image: linear-gradient(to right, rgba(225, 135, 18) 0%, rgba(195, 9, 197) 100%);
+
+    position: fixed;
+    top: -1.3%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-top-left-radius: 0.7vw;
+    border-top-right-radius: 0.7vw;
+}
+
+.deze2 {
+    width: 100%;
+    height: 12.5%;
+    background-color: rgba(0, 0, 0, 0.26);
+}
+
+.infobox {
+    height: 7%;
+
+    position: fixed;
+    top: 2.8%;
+    left: 5%;
+
+    border-left: solid rgba(225, 135, 18) 0.55vw;
+}
+
+.infobox-pirkimas {
+    position: fixed;
+    top: 0.7%;
+    left: 11%;
+
+    width: fit-content;
+    font-family: encode-semi;
+    font-size: 1vw;
+
+    color: rgb(235, 235, 235);
+}
+
+.infobox-kaina {
+    position: fixed;
+    top: 4.6%;
+    left: 11%;
+
+    width: fit-content;
+    font-family: encode-lig;
+    font-weight: 100;
+    font-size: 0.9vw;
+
+    color: rgb(235, 235, 235);
+}
+
+/* Informacija apie mašiną */
+
+.greitis {
+    width: 92%;
+    height: 6.7%;
+    border-radius: 0.8vw;
+    background-color: rgba(0, 0, 0, 0.199);
+
+    position: fixed;
+    top: 15%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.greitis-info {
+    font-family: encode-lig;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.9vw;
+
+    position: fixed;
+    top: 0%;
+    left: 12.5%;
+}
+
+.greitis-nuotrauka {
+    font-family: encode-lig;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+
+    position: fixed;
+    top: 20%;
+    left: 3%;
+}
+
+.bakas {
+    width: 92%;
+    height: 6.7%;
+    border-radius: 0.8vw;
+    background-color: rgba(0, 0, 0, 0.384);
+
+    position: fixed;
+    top: 24%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.bakas-info {
+    font-family: encode-lig;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.9vw;
+
+    position: fixed;
+    top: 0%;
+    left: 12.5%;
+}
+
+.bakas-nuotrauka {
+    font-family: encode-lig;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+
+    position: fixed;
+    top: 20%;
+    left: 3%;
+}
+
+.simtas {
+    width: 92%;
+    height: 6.7%;
+    border-radius: 0.8vw;
+    background-color: rgba(0, 0, 0, 0.199);
+
+    position: fixed;
+    top: 33%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.simtas-info {
+    font-family: encode-lig;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.9vw;
+
+    position: fixed;
+    top: 0%;
+    left: 12.5%;
+}
+
+.simtas-nuotrauka {
+    font-family: encode-lig;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+
+    position: fixed;
+    top: 12%;
+    left: 2.5%;
+}
+
+.varomieji {
+    width: 92%;
+    height: 6.7%;
+    border-radius: 0.8vw;
+    background-color: rgba(0, 0, 0, 0.384);
+
+    position: fixed;
+    top: 42%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.varomieji-info {
+    font-family: encode-lig;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.9vw;
+
+    position: fixed;
+    top: 0%;
+    left: 12.5%;
+}
+
+.varomieji-nuotrauka {
+    font-family: encode-lig;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 18px;
+
+    position: fixed;
+    top: 18%;
+    left: 2.6%;
+}
+
+
+.dezes3-linija {
+    width: 60%;
+    height: 2%;
+    background-image: linear-gradient(to right, rgba(225, 135, 18) 0%, rgba(195, 9, 197) 100%);
+
+    position: fixed;
+    top: -1.3%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    border-top-left-radius: 0.7vw;
+    border-top-right-radius: 0.7vw;
+}
+
+.deze3 {
+    width: 100%;
+    height: 11%;
+    background-color: rgba(0, 0, 0, 0.26);
+
+    position: fixed;
+    top: 51%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+.infobox2 {
+    height: 60%;
+
+    position: fixed;
+    top: 20%;
+    left: 5%;
+
+    border-left: solid rgba(225, 135, 18) 0.55vw;
+}
+
+.infobox2-nuotrauka {
+    position: fixed;
+    top: 22.5%;
+    left: 11.2%;
+}
+
+.infobox2-tekstas {
+    font-family: encode-reg;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.84vw;
+
+    width: fit-content;
+    position: fixed;
+    top: 5.7%;
+    left: 17.5%;
+}
+
+.infobox2-bandyti {
+    font-family: encode-lig;
+    font-weight: 100;
+    color: rgb(230, 230, 230);
+    font-size: 0.79vw;
+    background-color: rgba(0, 0, 0, 0.267);
+    border-radius: 0.4vw;
+    width: fit-content;
+    height: 27%;
+    padding-left: 0.4vw;
+    padding-right: 0.4vw;
+
+    position: fixed;
+    top: 40%;
+    left: 11%;
+
+    /*transition: 0.1s;*/
+}
+
+/*.infobox2-bandyti:hover {
+    background-color: rgba(216, 127, 11, 0.514);
+    color: rgb(235, 235, 235);
+    box-shadow: 0 0 0.78125vw rgba(228, 141, 10, 0.466), 0 0 0.15625vw rgba(228, 141, 10, 0.466);
+}*/
+
+.deze4 {
+    width: 60%;
+    height: 28%;
+    background-color: rgba(0, 0, 0, 0.26);
+    border-radius: 0.7vw;
+
+    position: fixed;
+    top: 63.5%;
+    left: 3%;
+}
+
+.perdazymas-header {
+    height: 3%;
+    width: 48%;
+    background-color: rgba(0, 0, 0, 0.397);
+    border-top-right-radius: 0.8vw;
+    border-top-left-radius: 0.8vw;
+
+    position: fixed;
+    top: 64.5%;
+    left: 4.5%;
+}
+
+.perdazymas-header-tekstas {
+    font-family: encode-reg;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.7vw;
+
+    position: fixed;
+    top: 63.5%;
+    left: 7.5%;
+}
+
+.perdazymas-deze {
+    height: 5%;
+    width: 57%;
+    background-color: rgba(0, 0, 0, 0.26);
+    border-bottom-right-radius: 0.6vw;
+    border-bottom-left-radius: 0.6vw;
+    border-top-right-radius: 0.6vw;
+
+    position: fixed;
+    top: 67.5%;
+    left: 4.5%;
+}
+
+.perdazymas-spalva {
+    font-family: ibm-bold;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.9vw;
+
+    position: fixed;
+    top: 66.5%;
+    left: 7%;
+}
+
+.perdazymas-kaina {
+    font-family: encode-bold;
+    font-weight: 100;
+    color: rgb(107, 207, 13);
+    font-size: 0.9vw;
+
+    position: absolute;
+    top: -19%;
+    right: 30%;
+}
+
+.kaire {
+    height: 75%;
+    width: 11%;
+    background-color: rgba(0, 0, 0, 0.26);
+    border-radius: 0.6vw;
+    transform: translate(665%, 17%);
+
+    transition: 0.1s;
+}
+
+.kaire-v {
+    position: fixed;
+    font-family: droid-bold;
+    font-size: 1.35vw;
+    left: 18%;
+    top: -75%;
+    color: rgba(225, 135, 18);
+}
+
+.desine {
+    height: 75%;
+    width: 11%;
+    background-color: rgba(0, 0, 0, 0.26);
+    border-radius: 0.6vw;
+    transform: translate(790%, -82%);
+
+    transition: 0.1s;
+}
+
+.desine-v {
+    position: fixed;
+    font-family: droid-bold;
+    font-size: 1.35vw;
+    left: 27%;
+    top: -75%;
+    color: rgba(195, 9, 197);
+}
+
+
+.variklis-header {
+    height: 3%;
+    width: 42%;
+    background-color: rgba(0, 0, 0, 0.397);
+    border-top-right-radius: 0.8vw;
+    border-top-left-radius: 0.8vw;
+
+    position: fixed;
+    top: 73.5%;
+    left: 19.5%;
+}
+
+.variklis-header-tekstas {
+    font-family: encode-reg;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.7vw;
+
+    position: fixed;
+    top: 72.5%;
+    left: 21.5%;
+}
+
+.variklis-deze {
+    height: 5%;
+    width: 57%;
+    background-color: rgba(0, 0, 0, 0.26);
+    border-bottom-right-radius: 0.6vw;
+    border-bottom-left-radius: 0.6vw;
+    border-top-left-radius: 0.6vw;
+
+    position: fixed;
+    top: 76.5%;
+    left: 4.5%;
+}
+
+.variklis-lygis {
+    font-family: ibm-bold;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.9vw;
+
+    position: fixed;
+    top: 75.5%;
+    left: 7%;
+}
+
+.variklis-kaina {
+    font-family: encode-bold;
+    font-weight: 100;
+    color: rgb(107, 207, 13);
+    font-size: 0.9vw;
+
+    float: right;
+    text-align: right;
+
+    position: absolute;
+    top: -19%;
+    right: 30%;
+}
+
+.dujos-header {
+    height: 3%;
+    width: 42.5%;
+    background-color: rgba(0, 0, 0, 0.397);
+    border-top-right-radius: 0.8vw;
+    border-top-left-radius: 0.8vw;
+
+    position: fixed;
+    top: 82.5%;
+    left: 4.5%;
+}
+
+.dujos-header-tekstas {
+    font-family: encode-reg;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.7vw;
+
+    position: fixed;
+    top: 81.5%;
+    left: 8%;
+}
+
+.dujos-deze {
+    height: 5%;
+    width: 57%;
+    background-color: rgba(0, 0, 0, 0.26);
+    border-bottom-right-radius: 0.6vw;
+    border-bottom-left-radius: 0.6vw;
+    border-top-right-radius: 0.6vw;
+
+    position: fixed;
+    top: 85.5%;
+    left: 4.5%;
+}
+
+.dujos-ratlankis {
+    font-family: ibm-bold;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.9vw;
+
+    position: fixed;
+    top: 84.5%;
+    left: 7%;
+}
+
+.dujos-kaina {
+    font-family: encode-bold;
+    font-weight: 100;
+    color: rgb(107, 207, 13);
+    font-size: 0.9vw;
+
+    position: absolute;
+    top: -19%;
+    right: 30%;
+}
+
+.kaire:hover {
+    background-color: rgba(216, 127, 11, 0.514);
+    color: rgb(235, 235, 235);
+    box-shadow: 0 0 0.78125vw rgba(228, 141, 10, 0.466), 0 0 0.15625vw rgba(228, 141, 10, 0.466);
+}
+
+.desine:hover {
+    background-color: rgba(188, 16, 211, 0.514);
+    color: rgb(235, 235, 235);
+    box-shadow: 0 0 0.78125vw rgba(188, 16, 211, 0.514), 0 0 0.15625vw rgba(188, 16, 211, 0.514);
+}
+
+.dezes5-linija {
+    width: 20%;
+    height: 0.2%;
+    background-image: linear-gradient(to right, rgba(225, 135, 18) 0%, rgba(195, 9, 197) 100%);
+
+    position: fixed;
+    top: 63.5%;
+    left: 81%;
+    transform: translateX(-50%);
+}
+
+.deze5 {
+    height: 28%;
+    width: 32%;
+    background-color: rgba(0, 0, 0, 0.26);
+
+    position: fixed;
+    top: 63.5%;
+    left: 65%;
+}
+
+.deze5-bendrakaina {
+    font-family: encode-reg;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.85vw;
+    text-align: center;
+
+    position: relative;
+    top: -2%;
+}
+
+.deze5-linija {
+    width: 17%;
+    height: 0.2%;
+    background-color: rgb(235, 235, 235);
+
+    position: fixed;
+    top: 68.5%;
+    left: 72.5%;
+}
+
+.daiktai {
+    font-family: encode-lig;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.75vw;
+    text-align: center;
+    position: relative;
+    top: -1%;
+}
+
+.deze5-isviso {
+    font-family: encode-reg;
+    font-weight: 100;
+    color: rgb(235, 235, 235);
+    font-size: 0.85vw;
+    text-align: center;
+    position: relative;
+    top: 18%;
+}
+
+.deze5-linija2 {
+    width: 17%;
+    height: 0.2%;
+    background-color: rgb(235, 235, 235);
+
+    position: fixed;
+    top: 87.7%;
+    left: 72.5%;
+}
+
+.deze5-suma {
+    font-family: encode-lig;
+    font-weight: 100;
+    color: rgb(113, 219, 14);
+    font-size: 0.75vw;
+    text-align: center;
+    position: relative;
+    top: 17%;
+}
+
+.pirkti {
+    background-color: rgb(216, 151, 11);
+    outline: 0;
+    border: 0;
+    color: rgb(235, 235, 235);
+    width: 50%;
+    height: 5.5%;
+    border-radius: 1.6vw;
+    font-family: encodes-med;
+    font-size: 0.85vw;
+    box-shadow: 0 0 0.78125vw rgba(228, 141, 10, 0.466), 0 0 0.15625vw rgba(228, 141, 10, 0.466);
+
+    position: fixed;
+    top: 93%;
+    left: 50%;
+    transform: translateX(-50%);
+
+    transition: 0.2s
+}
+
+.pirkti:hover {
+    background-color: rgba(204, 128, 30, 0.945);
+    box-shadow: 0 0 0.98125vw rgba(228, 141, 10, 0.466), 0 0 0.35625vw rgba(228, 141, 10, 0.466);
+}
